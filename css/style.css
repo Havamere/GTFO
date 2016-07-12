@@ -1,0 +1,13 @@
+.backPic {
+    height: 100%;
+    background-image: url("../public/assets/img/kookyhouse.jpg"); 
+    background-size: cover;
+    opacity: 0.2;
+}
+
+.forms {
+    position: absolute;
+    left: 60%;
+    top: 25%;
+    /*padding-top: 50px;*/
+}
