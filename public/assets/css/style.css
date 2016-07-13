@@ -11,3 +11,8 @@
     top: 25%;
     /*padding-top: 50px;*/
 }
+
+#slowFade {
+  -webkit-animation-duration: 5s;
+  
+}
