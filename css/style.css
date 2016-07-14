@@ -1,14 +1,31 @@
-.backPic {
+.backPic1 {
     height: 100%;
     background-image: url("../public/assets/img/kookyhouse.jpg"); 
     background-size: cover;
     opacity: 0.2;
 }
 
-.forms {
+.backPic2 {
+    height: 100%;
+    background-image: url("../public/assets/img/bedroom.jpg"); 
+    background-size: cover;
+    opacity: 0.2;
+}
+
+.game {
     position: absolute;
-    left: 60%;
-    top: 25%;
+    margin-left: 60%;
+    margin-top: 25%;
+    /*padding-top: 50px;*/
+}
+
+.game2 {
+    /*position: absolute;*/
+    margin-left: 25%;
+    margin-top: 25%;
+    height: 50%;
+    width: 50%;
+    z-index: 3;
     /*padding-top: 50px;*/
 }
 
