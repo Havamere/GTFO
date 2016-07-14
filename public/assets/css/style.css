@@ -5,10 +5,26 @@
     opacity: 0.2;
 }
 
-.forms {
+.backPic2 {
+    height: 100%;
+    background-image: url("../img/bedroom.jpg"); 
+    background-size: cover;
+    opacity: 0.2;
+}
+
+.game {
     position: absolute;
     left: 60%;
     top: 25%;
+    /*padding-top: 50px;*/
+}
+
+.game2 {
+    position: absolute;
+    margin-left: 25%;
+    margin-top: 25%;
+    height: 50%;
+    width: 50%;
     /*padding-top: 50px;*/
 }
 
