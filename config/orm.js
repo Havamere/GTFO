@@ -10,7 +10,7 @@ var orm = {
         });
     },
    
-    addPlayer: function(tableInput, player_name, password cb) {
+    addPlayer: function(tableInput, player_name, password, cb) {
         var s = "INSERT INTO " + tableInput + " (player_name, password) VALUES ('" +player_name+ "',false);";
         connection.query(s, function(err, result) {
             if (err) throw err;
