@@ -1,15 +1,15 @@
 .backPic {
     height: 100vh;
-    background-image: url("../img/kookyhouse.jpg"); 
+    background-image: url("../img/just_right_kookyhouse.jpg"); 
     background-size: cover;
-    opacity: 0.2;
+    /*opacity: 0.2;*/
 }
 
 .backPic2 {
     height: 100vh;
-    background-image: url("../img/lighter_bedroom.jpg"); 
+    background-image: url("../img/just_right_bedroom.jpg"); 
     background-size: cover;
-    opacity: 0.2;
+    /*opacity: 0.2;*/
 }
 
 .game {
@@ -35,6 +35,10 @@
 
 .frame {
     margin-top: 30px;
+}
+
+img {
+    width: 100%;
 }
 
 #slowFade {
