@@ -5,11 +5,11 @@
     opacity: 0.2;
 }
 
-.backPic2 {
-    height: 100%;
-    background-image: url("../public/assets/img/bedroom.jpg"); 
+body {
+    /*height: 100%;*/
+    background-image: url("../public/assets/img/bedroom2.jpg"); 
     background-size: cover;
-    opacity: 0.2;
+    /*opacity: 0.2;*/
 }
 
 .game {
@@ -20,11 +20,11 @@
 }
 
 .game2 {
-    /*position: absolute;
-    left: 25%;
-    top: 25%;*/
-    height: 500px;
-    width: 500px;
+    /*position: absolute;*/
+    margin-left: 25%;
+    /*margin-top: 25%;*/
+    height: 50%;
+    width: 50%;
     z-index: 3;
     /*padding-top: 50px;*/
 }
