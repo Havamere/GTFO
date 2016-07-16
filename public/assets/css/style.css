@@ -1,12 +1,12 @@
 .backPic {
-    height: 100vh;
+    height: 150vh;
     background-image: url("../img/just_right_kookyhouse.jpg"); 
     background-size: cover;
     /*opacity: 0.2;*/
 }
 
 .backPic2 {
-    height: 100%;
+    height: 150%;
     overflow: auto;
     background-size: cover;
     /*opacity: 0.2;*/
@@ -35,6 +35,9 @@
 
 .frame {
     margin-top: 30px;
+    padding: 50px;
+    overflow: auto;
+    height: 100%;
 }
 
 img {
