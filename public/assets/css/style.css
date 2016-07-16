@@ -6,8 +6,8 @@
 }
 
 .backPic2 {
-    height: 100vh;
-    background-image: url("../img/just_right_bedroom.jpg"); 
+    height: 100%;
+    overflow: auto;
     background-size: cover;
     /*opacity: 0.2;*/
 }
