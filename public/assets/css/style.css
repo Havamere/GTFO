@@ -6,8 +6,8 @@
 }
 
 .backPic2 {
-    height: 100%;
-    background-image: url("../img/bedroom.jpg"); 
+    height: 100vh;
+    background-image: url("../img/lighter_bedroom.jpg"); 
     background-size: cover;
     opacity: 0.2;
 }
@@ -20,12 +20,26 @@
 }
 
 .game2 {
-    position: absolute;
+    /*position: absolute;*/
     margin-left: 25%;
     margin-top: 25%;
     height: 50%;
     width: 50%;
+    z-index: 3;
     /*padding-top: 50px;*/
+}
+
+.gameTwo {
+    z-index: 3;
+}
+
+.frame {
+    margin-top: 30px;
+}
+
+#slowFade {
+  -webkit-animation-duration: 5s;
+  
 }
 
 #slowFade {
