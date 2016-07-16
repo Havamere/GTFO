@@ -20,7 +20,7 @@ if(sess.email) {
 * This line check Session existence.
 * If it existed will do some action.
 */
-    res.redirect('/admin');
+    res.redirect('/game');
 }
 else {
     res.render('index.html');

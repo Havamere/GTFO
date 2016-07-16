@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var connection = require('./config/connection.js');
 var path = require('path');
+var session = require('express-session');
 
 //sets express calls for use
 var app = express();
@@ -15,6 +16,7 @@ app.use(express.static(__dirname + '/public/assets'));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(session({secret: 'ssshhhhh'}));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
