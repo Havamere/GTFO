@@ -5,9 +5,9 @@
     /*opacity: 0.2;*/
 }
 
-.backPic2 {
+body {
     height: 100vh;
-    background-image: url("../img/just_right_bedroom.jpg"); 
+    background-image: url("../public/assets/img/just_right_bedroom.jpg"); 
     background-size: cover;
     /*opacity: 0.2;*/
 }
@@ -21,10 +21,10 @@
 
 .game2 {
     /*position: absolute;*/
-    margin-left: 25%;
-    margin-top: 25%;
-    height: 50%;
-    width: 50%;
+    margin-left: 10%;
+    margin-top: 10%;
+    height: 80%;
+    width: 80%;
     z-index: 3;
     /*padding-top: 50px;*/
 }
