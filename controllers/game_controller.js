@@ -3,11 +3,11 @@ var bodyParser = require('body-parser');
 var orm = require('../config/orm.js');
 var app = express();
 
-var background = [
-	{url: "img/just_right_bedroom.jpg", text: 'you see me'},
-	{url: "img/just_right_library.jpg", text: 'you see me'},
-	{url: "img/just_right_maids_room.jpg", text: 'you see me'},
-	{url: "img/just_right_abandoned_library.jpg", text: 'you see me'}
+var gameData = [
+	{name: "Bedroom", roomClass: "bedroom", frameClass: "frameIMG", text: 'you see me', button1: "item1", button2: "item2"},
+	{name: "Library", roomClass: "library", frameClass: "frameIMG", text: 'you see me', button1: "item1", button2: "item2"},
+	{name: "Maid's Room", roomClass: "maidsRoom", frameClass: "frameIMG", text: 'you see me', button1: "item1", button2: "item2"},
+	{name: "Placeholder", roomClass: "placeholder", frameClass: "frameIMG", text: 'you see me', button1: "item1", button2: "item2"}
 ];
 
 module.exports = function(app){
@@ -17,7 +17,7 @@ module.exports = function(app){
 	});
 
 	app.get('/game', function(req, res){
-		var chosen = background[Math.floor(Math.random()*background.length)];
+		var chosen = gameData[Math.floor(Math.random()*gameData.length)];
 		// background.splice(chosen)
 		console.log(chosen);
 		res.render('game', chosen);

@@ -6,7 +6,7 @@
 }
 
 .backPic2 {
-    height: 150%;
+    /*height: 100%;*/
     overflow: auto;
     background-size: cover;
     /*opacity: 0.2;*/
@@ -30,18 +30,15 @@
 }
 
 .gameTwo {
+    margin-top: 10px
     z-index: 3;
+    height: 75%;
 }
 
 .frame {
-    margin-top: 30px;
-    padding: 50px;
+    padding: 130px 230px;
     overflow: auto;
-    height: 100%;
-}
-
-img {
-    width: 100%;
+    height: 100vh;
 }
 
 #slowFade {
@@ -49,7 +46,27 @@ img {
   
 }
 
-#slowFade {
-  -webkit-animation-duration: 5s;
-  
+.bedroom {
+    background: url("../img/just_right_bedroom.jpg") center center no-repeat;
+}
+
+.library {
+    background: url("../img/just_right_library.jpg") center center no-repeat;
+}
+
+.maidsRoom {
+    background: url("../img/just_right_maids_room.jpg") center center no-repeat;
+}
+
+.placeholder {
+    background: url("../img/just_right_abandoned_library.jpg") center center no-repeat;
+}
+
+.frameIMG {
+    background: url("../img/frames/frame1.png") no-repeat top center;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
 }
