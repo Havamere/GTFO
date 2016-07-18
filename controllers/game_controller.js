@@ -25,6 +25,6 @@ module.exports = function(app){
 		// background.splice(chosen)
 		console.log(chosen);
 		res.render('game', chosen);
-
+		// hello
 	});
 }
