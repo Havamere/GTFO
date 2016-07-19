@@ -1,0 +1,9 @@
+Attic – Final Room
+
+It sounded like the door just locked behind me so I will not be going back that way, which is a shame because I really did want to see the rest of the house. 
+
+Wow! Look at that window and how much space is in here! All that’s taking up space is this charming little children’s rocking horse and an antique dresser. They should move all that junk from downstairs to up here. They could really get this house to function better. Nevertheless, let’s have a look around shall we? What’s inside these drawers?
+
+Prompt user to take three items: magnifying glass, phone, scotch, and key.
+
+When user makes correct choice of the phone, scotch, and key, the fellow will say: Here we are, I was able to find a phone, some Scotch, and a key! Well, I will just call the repair man to come fix my buggy, drink this superb Scotch, and then use this key to exit out the window. 
