@@ -16,15 +16,18 @@ var gameData = [
 
 module.exports = function(app){
 
-	app.get('/', function(req, res){
-		res.render('home');
-	});
+	if(gameData.length > 0){
 
-	app.get('/game', function(req, res){
-		var chosen = gameData[Math.floor(Math.random()*gameData.length)];
-		// background.splice(chosen)
-		console.log(chosen);
-		res.render('game', chosen);
+		app.get('/', function(req, res){
+			res.render('home');
+		});
 
-	});
+		app.get('/game', function(req, res){
+			var randomIndex = Math.floor(Math.random()*gameData.length);
+			var chosen = gameData[randomIndex];
+			console.log(chosen);
+			res.render('game', chosen);
+			gameData.splice(randomIndex, 1);
+		});
+	}
 }
