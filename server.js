@@ -1,11 +1,14 @@
 //dependancies needed for server file
 var express = require('express');
+var flash = require('connect-flash');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var connection = require('./config/connection.js');
 var path = require('path');
+var passport = require('passport');
 var session = require('express-session');
+var orm = require('./db/orm.js');
 
 //sets express calls for use
 var app = express();
@@ -16,12 +19,16 @@ app.use(express.static(__dirname + '/public/assets'));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(session({secret: 'ssshhhhh'}));
+app.use(session({secret: 'ssshhhhh', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true}));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 //gets and uses game specific orms
 require('./controllers/game_controller.js')(app);
+
+// Routes
+require('./routes/html-routes.js')(app);
+
 
 //handlebars helper function
 
