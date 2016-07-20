@@ -2,17 +2,18 @@ h1 {
     text-align: center;
 }
 
+/*home page background*/
 .backPic {
     height: 100vh;
     background-image: url("../img/just_right_kookyhouse.jpg"); 
     background-size: cover;
 }
-
+/*game page background control*/
 .backPic2 {
     overflow: auto;
     background-size: cover;
 }
-
+/*helps control form on home page*/
 .game {
     position: absolute;
     left: 60%;
@@ -26,24 +27,24 @@ h1 {
     width: 50%;
     z-index: 3;
 }
-
+/*spacing for game pages*/
 .gameTwo {
     margin-top: 10px
     z-index: 3;
     height: 75%;
 }
-
+/*spacing control for frame on each game page*/
 .frame {
     padding: 130px 230px;
     overflow: auto;
     height: 100vh;
 }
-
+/*adds fading in effect*/
 #slowFade {
   -webkit-animation-duration: 5s;
   
 }
-
+/*background images and size control*/
 .bedroom {
     background: url("../img/just_right_bedroom.jpg") center center no-repeat;
     background-size: cover;
@@ -66,10 +67,17 @@ h1 {
 
 .endStagePic {
     background: url("../img/keepers/final_room.png") center center no-repeat;
+    height: 100vh;
     background-size: cover;
 }
+/*spacing and control on last page*/
+.scores, .endStory {
+    background: grey;
+    opacity: 0.8;
+    margin-top: 15%;
+}
 
-
+/*controls screen at numerous markers for better page responsiveness*/
 @media screen and (min-width: 325px) and (max-width: 399px) {
     .col-xs-offset-5 {
         margin-left: 26.666667%
@@ -156,7 +164,7 @@ h1 {
 
 @media screen and (min-width: 1000px) {
     .col-xs-offset-5 {
-        margin-left: 26.666667%
+        margin-left: 35.666667%
     }
     .frame {
         padding: 10% 20%;
