@@ -13,6 +13,8 @@ Hmm, I believe I see something up ahead.
 What luck! Look at this place! I’m sure it’s sparkling clean, harmless, and full of exquisite ladies and gents! Oh, I hope there is a party going on this evening! This will be a lovely place to stay and I may be the only Guest here! Nothing odd about that since I am in the countryside and this is the only house I have seen for miles and miles…well any who! 
 Such good fortune finding this charming abode! Let’s go inside shall we!? What could possibly go wrong!?
 
+Oh, I seemed to be locked in here. I wonder what I can find to get me out of here...
+
 About the game
 
-The user gets 4 choices for each room and has to choose the correct 3 to get out of the room. If user takes wrong set of items then they are prompted by the fellow saying Hmm, I am not quite sure how these will get me out but I will give it a shot! Nope, still no luck…
+The user gets 2 choices for each of the 3 rooms and chooses 1 from each room. At the forth and final room, the user will have either chosen the correct 3 items from the previous rooms or not have.
