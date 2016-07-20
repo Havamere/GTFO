@@ -1,5 +1,5 @@
 Master Bedroom - I wonder who the master of this bedroom is. It is very large but very cozy, especially with that fire burning. A bit messy with the children’s toys around but nothing a little sprucing up won’t help with! Let me have a look around and see what I can find…
 
-Prompt user to take one item: axe and phone.
+Prompt user to take one item: rope and phone.
 
 Whatever he chooses: This looks useful.

@@ -1,5 +1,5 @@
 Maid’s Room - My word, this room is filthy! This must be the maid’s bedroom from the look of the small bed and general size of the room. It is very charming, although it may need some dusting and it is a bit drafty. I do not like the look of that pit below outside the window. I wonder what's in here…   
 
-Prompt user to take one item: Revolver and scotch. 
+Prompt user to take one item: magnifying glass and scotch. 
 
 Whatever he chooses: This looks useful.
