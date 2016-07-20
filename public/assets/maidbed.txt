@@ -1,0 +1,5 @@
+Maid’s Room - My word, am I trapped again? Whoever built this house loves to keep Guests from going to another dwelling to stay in! This must be the maid’s bedroom from the look of the small bed and general size of the room. It is very charming, although it may need some dusting and it is a bit drafty. I do not like the look of that pit below outside the window. Let me see if there is another way out…   
+
+Prompt user to take three items: Revolver, bullets, knife, and wrench. 
+
+When user makes correct choice of the revolver, bullets, and the knife, the fellow will say: I wonder why the maid would need all these weapons…unless the relationship with the master of the house was dreadful…Do you think that was all the blood I spotted before?...Oh I’m sure it was to protect the master! That’s it! Now let me jiggle try to jiggle the lock open. Hmm, that did not work. Well, I suppose I could just shoot the lock off!

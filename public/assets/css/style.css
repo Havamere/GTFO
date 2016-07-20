@@ -59,14 +59,14 @@ h1 {
     background-size: cover;
 }
 
-.placeholder {
-    background: url("../img/just_right_abandoned_library.jpg") center center no-repeat;
-    background-size: cover;
-}
-
 .frameIMG {
     background: url("../img/frames/frame1.png") no-repeat top center;
     background-size: contain;
+}
+
+.endStagePic {
+    background: url("../img/keepers/final_room.png") center center no-repeat;
+    background-size: cover;
 }
 
 

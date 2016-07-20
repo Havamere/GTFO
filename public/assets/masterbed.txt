@@ -1,0 +1,5 @@
+Master Bedroom - Oh my, I seemed to be locked inside here. Strange, I have never seen automatic locks before. I wonder who the master of this bedroom is. It is very large but very cozy, especially with that fire burning. A bit messy with the children’s toys around but nothing a little sprucing up won’t help with! The windows are locked as well so I imagine there must be some way out to see the rest of the house…
+
+Prompt user to take three items: axe, doll, bloody paper, and broken chair leg.
+
+When user makes correct choice of the broken chair leg, axe, and the doll, the fellow will say: I am going to return this doll to the little child I faintly saw and heard earlier saying to come play with her! Now to use the broken chair leg to make this room warmer. I will stay here for a bit and then I will use the axe to break down the door. I hope the master of this house won’t be upset but I will need to use the washroom eventually!
