@@ -1,5 +1,5 @@
-Library - I say, this whole house may be a ruse. No bother, I will take a look around. This is the largest library I have ever seen! Just look at all these books! I have some time to waste let me relax and read before trying to get out of here. I just need to find the right tools to do that and get out… 
+Library - I say, this whole house may be a ruse! No bother, I will take a look around. This is the largest library I have ever seen! Just look at all these books! I have some time to waste let me relax and read before moving on. I just want to have a quick peek around… 
 
-Prompt user to take three items: rope, candlestick, matches, and book.
- 
-When user makes correct choice of the candlestick, matches, and book, the fellow will say: Perfect! Just what I need! Some lighting and this book right here…(pulls book from bookshelf opening up a secret door to the next room)…This looks promising! 
+Prompt user to take one item: key and candlestick.
+
+Whatever he chooses: This looks useful.
