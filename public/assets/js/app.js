@@ -1,7 +1,5 @@
-module.exports = {
-
- winArray: ["Ice Pick","Rope","Mallet"],
-
- otherArray: ["Pistol","Wrench","Book"],
-
-}
+$(".btn").on('click', function() {
+	var item = $(this).val();
+	
+	//alert("HELLOOOOOOO!!!!!");
+})

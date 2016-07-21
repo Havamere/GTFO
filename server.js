@@ -1,14 +1,14 @@
 //dependancies needed for server file
 var express = require('express');
-var flash = require('connect-flash');
+// var flash = require('connect-flash');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 var connection = require('./config/connection.js');
 var path = require('path');
-var passport = require('passport');
+// var passport = require('passport');
 var session = require('express-session');
-var orm = require('./db/orm.js');
+// var orm = require('./db/orm.js');
 
 //sets express calls for use
 var app = express();
@@ -27,14 +27,10 @@ app.set('view engine', 'handlebars');
 require('./controllers/game_controller.js')(app);
 
 // Routes
-require('./routes/html-routes.js')(app);
-
-
-//handlebars helper function
-
+// require('./routes/html-routes.js')(app);
 
 var port = 3000;
-
+//confirms active server in node
 app.listen(port, function() {
     console.log("Listening on PORT " + port);
 });
