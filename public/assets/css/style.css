@@ -70,6 +70,31 @@ h1 {
     height: 100vh;
     background-size: cover;
 }
+
+.Magnifier {
+    content: url("../img/Magnifying glass.png");
+}
+
+.Candlestick {
+    content: url("../img/candle.png");
+}
+
+.Rope {
+    content: url("../img/rope.png");
+}
+
+.Scotch {
+    content: url("../img/scotch.png");
+}
+
+.Phone {
+    content: url("../img/phone.png");
+}
+
+.Key {
+    content: url("../img/key.png");
+}
+
 /*spacing and control on last page*/
 .scores, .endStory {
     background: grey;

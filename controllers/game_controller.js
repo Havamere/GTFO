@@ -2,15 +2,19 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var orm = require('../config/orm.js');
-var items = require('../public/assets/js/app.js');
 var app = express();
 
+var winArray = ["Scotch","Key","Phone"];
+
+var otherArray = ["Magnifier","Rope","Candlestick"];
 //game play data 
 var gameData = [
-	{name: "Bedroom", roomClass: "bedroom", frameClass: "frameIMG", text: 'you see me', button1: items.winArray[1], button2: items.otherArray[1]},
-	{name: "Library", roomClass: "library", frameClass: "frameIMG", text: 'you see me', button1: items.winArray[2], button2: items.otherArray[2]},
-	{name: "Maid's Room", roomClass: "maidsRoom", frameClass: "frameIMG", text: 'you see me', button1: items.otherArray[0], button2: items.winArray[0]},
+	{name: "Bedroom", roomClass: "bedroom", frameClass: "frameIMG", text: 'you see me', button1: winArray[1], button2: otherArray[1]},
+	{name: "Library", roomClass: "library", frameClass: "frameIMG", text: 'you see me', button1: winArray[2], button2: otherArray[2]},
+	{name: "Maid's Room", roomClass: "maidsRoom", frameClass: "frameIMG", text: 'you see me', button1: otherArray[0], button2: winArray[0]},
 ];
+
+
 
 //page render program
 module.exports = function(app){
@@ -18,7 +22,7 @@ module.exports = function(app){
 			res.render('end');
 		});
 	//logic to cover game beginning to end
-	if(gameData.length > 0){
+	if(gameData.length > 0) {
 		//home page / sign-in form 
 		app.get('/', function(req, res) {
 			res.render('home');
