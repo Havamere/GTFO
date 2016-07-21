@@ -73,26 +73,38 @@ h1 {
 
 .Magnifier {
     content: url("../img/Magnifying glass.png");
+    height: 30%;
+    width: 20%;
 }
 
 .Candlestick {
     content: url("../img/candle.png");
+    height: 30%;
+    width: 20%;
 }
 
 .Rope {
     content: url("../img/rope.png");
+    height: 30%;
+    width: 20%;
 }
 
 .Scotch {
     content: url("../img/scotch.png");
+    height: 30%;
+    width: 20%;
 }
 
 .Phone {
     content: url("../img/phone.png");
+    height: 30%;
+    width: 20%;
 }
 
 .Key {
     content: url("../img/key.png");
+    height: 30%;
+    width: 20%;
 }
 
 /*spacing and control on last page*/
