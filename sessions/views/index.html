@@ -4,20 +4,25 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
 <script>
 $(document).ready(function(){
-    var email,pass;
+    var name,pass;
+    console.log("something");
     $("#submit").click(function(){
-        email=$("#email").val();
-        pass=$("#password").val();
+        name=$("#playerName").val();
+        pass=$("#playerPass").val();
         /*
         * Perform some validation here.
         */
+
+
         $.post("http://localhost:3000/login",{email:email,pass:pass},function(data){        
             if(data==='done')           
             {
+                // alert(name + pass);
                 window.location.href="/admin";
             }
         });
     });
+
 });
 </script>
 </head>

@@ -3,13 +3,13 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: 'root',
+	password: '',
 	database: 'gtfo_db'
 });
 
 connection.connect(function(err){
 	if (err) throw err;
-	console.log('connected as id '+connection.threadID);
+	console.log('connected as id ' + connection.threadId);
 });
 
 // var connection = mysql.createConnection({
