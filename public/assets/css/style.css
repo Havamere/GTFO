@@ -36,7 +36,6 @@ h1 {
 /*spacing control for frame on each game page*/
 .frame {
     padding: 130px 230px;
-    overflow: auto;
     height: 100vh;
 }
 /*adds fading in effect*/
@@ -207,6 +206,6 @@ h1 {
         padding: 10% 20%;
     }
     .gameTwo {
-        height: 65%;
+        height: 55%;
     }
 }

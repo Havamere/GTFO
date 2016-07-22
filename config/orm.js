@@ -2,11 +2,13 @@ var connection = require('../config/connection.js');
 
 var orm = {
    
-    itemOne: function(tableInput, player_name, cb) {
-        var s = 'UPDATE ' + tableInput + "SET itemOne=true WHERE player_name = '" + player_name + "';";
-        connection.query(s, function(err, result) {
-            if (err) throw err;
-            cb(result);
+    itemChoice: function(tableInput, colName, player_name, cb) {
+        return new Promise(function(resolve, reject){
+            var s = 'UPDATE ' + tableInput + "SET "+ colName +"=true WHERE player_name = '" + player_name + "';";
+            connection.query(s, function(err, result) {
+                if (err) throw err;
+                cb(result);
+            });
         });
     },
    
