@@ -1,7 +1,6 @@
 -- CREATE DATABASE gtfo_db;
 USE gtfo_db;
 
-
 CREATE TABLE `game_data` (
   `player_name` VARCHAR(255) NOT NULL,
   `password` varchar(255) NOT NULL,
