@@ -1,4 +1,3 @@
-var orm = require('../../../config/orm.js');
 
 
 $(".btn").on('click', function() {
@@ -12,14 +11,17 @@ $(".btn").on('click', function() {
 })
 
 $(".btn").click(function(){
+	var orm = require('../.././config/orm.js');
+
     name=$("#playerName").val();
     pass=$("#playerPass").val();
-    /*
-    * Perform some validation here.
-    */
+    
+    // * Perform some validation here.
+    
 	var playerName = $("input[id='playerName']").val();
 	var playerPass = $("input[id='playerPass']").val();
-	orm.checkSavedPlayer('game_data', 'player_name', playerName, playerPass);
+	// orm.checkSavedPlayer('game_data', 'player_name', playerName, playerPass);
+	orm.newPlayer('game_data', playerName, playerPass);
 
     $.post("http://localhost:3000/login",{name:name,pass:pass},function(data){        
         if(data==='done')           

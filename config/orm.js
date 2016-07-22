@@ -2,21 +2,14 @@ var connection = require('../config/connection.js');
 
 var orm = {
    
-    itemOne: function(tableInput, player_name, cb) {
-        var s = 'UPDATE ' + tableInput + "SET itemOne=true WHERE player_name = '" + player_name + "';";
-        connection.query(s, function(err, result) {
+    updateItem: function(tableInput, item, bool, coltoSearch, nameInput) {
+        // var s = 'UPDATE ' + tableInput + "SET itemOne=true WHERE player_name = '" + player_name + "';";
+        var s = 'UPDATE ' + tableInput + ' SET ' + item + ' = ' + bool + ' WHERE ' + coltoSearch + ' = ?';
+        connection.query(s, [nameInput], function(err, result) {
             if (err) throw err;
-            cb(result);
+            // cb(result);
         });
-    },
-   
-    addPlayer: function(tableInput, player_name, password, cb) {
-        var s = "INSERT INTO " + tableInput + " (player_name, password) VALUES ('" +player_name+ "',false);";
-        connection.query(s, function(err, result) {
-            if (err) throw err;
-            cb(result);
-        });
-    },
+    },   
     // Will check database if player name exists
     checkSavedPlayer: function(tableInput, coltoSearch, nameInput, passwordInput) {
         var queryString = 'SELECT * FROM ' + tableInput + ' WHERE ' + coltoSearch + ' = ?';

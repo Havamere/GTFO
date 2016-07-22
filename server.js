@@ -10,6 +10,11 @@ var path = require('path');
 var session = require('express-session');
 // var orm = require('./db/orm.js');
 
+
+// ORM
+var orm = require('./config/orm.js');
+
+
 //sets express calls for use
 var app = express();
 
@@ -34,3 +39,4 @@ var port = 3000;
 app.listen(port, function() {
     console.log("Listening on PORT " + port);
 });
+

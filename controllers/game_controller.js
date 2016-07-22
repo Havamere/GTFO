@@ -14,7 +14,7 @@ var gameData = [
 	{name: "Maid's Room", roomClass: "maidsRoom", frameClass: "frameIMG", text: 'you see me', button1: otherArray[0], button2: winArray[0]},
 ];
 
-
+var game = require('../models/game.js');
 
 //page render program
 module.exports = function(app){
@@ -42,3 +42,28 @@ module.exports = function(app){
 		});
 	}
 }
+
+// **************************************
+$(".btn").click(function(){
+
+    name=$("#playerName").val();
+    pass=$("#playerPass").val();
+    
+    console.log(name + pass);
+    // * Perform some validation here.
+    
+	var playerName = $("input[id='playerName']").val();
+	var playerPass = $("input[id='playerPass']").val();
+
+	console.log(playerName + playerPass);
+	// orm.checkSavedPlayer('game_data', 'player_name', playerName, playerPass);
+	game.newPlayer(playerName, playerPass);
+
+   //  $.post("http://localhost:3000/login",{name:name,pass:pass},function(data){        
+   //      if(data==='done')           
+   //      {
+  	// console.log(name);
+   //        window.location.href="/admin";
+   //      }
+   //  });
+});
