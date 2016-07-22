@@ -1,5 +1,9 @@
 // $(document).ready(function () {
 
+	console.log("TESTING game_controller");
+	// var router = express.Router();
+	var game = require('../models/game.js');
+
 	//requires files to process requests to server
 	var express = require('express');
 	var bodyParser = require('body-parser');
@@ -16,10 +20,13 @@
 		{name: "Maid's Room", roomClass: "maidsRoom", frameClass: "frameIMG", text: 'you see me', button1: otherArray[0], button2: winArray[0]},
 	];
 
-	var game = require('../models/game.js');
+	// var game = require('../models/game.js');
 
 	//page render program
 	module.exports = function(app){
+		app.post('/', function(req, res) {
+			console.log('something');
+		});
 		app.get('/end', function(req, res) {
 				res.render('end');
 			});
@@ -44,6 +51,7 @@
 			});
 		}
 	};
+	game.newPlayer("Mulan", "Mushu");
 
 	// **************************************
 	// $(".btn").click(function(){
@@ -61,13 +69,13 @@
 	// 	// orm.checkSavedPlayer('game_data', 'player_name', playerName, playerPass);
 	// 	game.newPlayer(playerName, playerPass);
 
-	   //  $.post("http://localhost:3000/login",{name:name,pass:pass},function(data){        
-	   //      if(data==='done')           
-	   //      {
-	  	// console.log(name);
-	   //        window.location.href="/admin";
-	   //      }
-	   //  });
+	//     $.post("http://localhost:3000/login",{name:name,pass:pass},function(data){        
+	//         if(data==='done')           
+	//         {
+	//   	console.log(name);
+	//           window.location.href="/admin";
+	//         }
+	//     });
 	// });
 // });
 

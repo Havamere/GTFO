@@ -42,6 +42,13 @@ app.listen(port, function() {
 
 
 // ******************************************************
+
+var routes = require('./controllers/game_controller.js');
+
+app.use('/', routes);
+app.use('/game', routes);
+
+
 var game = {
     updateItem: function(item, bool, name) {
     	orm.updateItem('game_data', item, bool, 'player_name', name);
@@ -58,4 +65,6 @@ var game = {
     }
 };
 
-game.newPlayer("Woody", "Andy");
+
+module.exports = game;
+// game.newPlayer("Woody", "Andy");

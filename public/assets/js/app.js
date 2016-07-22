@@ -8,7 +8,7 @@ $(".btn").on('click', function() {
 
 	console.log(item);
 	//alert("HELLOOOOOOO!!!!!");
-})
+});
 
 $(".btn").click(function(){
 	var orm = require('../.././config/orm.js');
