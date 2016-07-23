@@ -1,7 +1,7 @@
 var UserModel = require('../models/User.js');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var orm = require('../db/orm.js');
+var orm = require('../config/orm.js');
 
 
 //Setting the strategy for Passport
@@ -41,11 +41,7 @@ module.exports = function(app){
 		});
 	});
 
-	app.get('/signin', function(req, res){
-		res.redirect('/')
-	});
-
-	app.get('/signup', function(req, res){
+	app.get('/newPlayer', function(req, res){
 		res.render('newPlayer');
 	});
 
@@ -90,7 +86,7 @@ module.exports = function(app){
 		res.redirect('/authenticated');
 	});
 
-	app.post('/signup', function(req, res){
+	app.post('/newPlayer', function(req, res){
 		var user = new UserModel(req.body);
 		UserModel.saveUser(user, function(status){
 			if(!status) {
