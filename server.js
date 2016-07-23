@@ -15,6 +15,13 @@ var app = express();
 //Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(__dirname + '/public/assets'));
 
+//flash is used to show a message on an incorrect login
+app.use(flash());
+
+//passport middleware methods
+app.use(passport.initialize());
+app.use(passport.session());
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -24,6 +31,7 @@ app.set('view engine', 'handlebars');
 
 //gets and uses game specific orms
 require('./controllers/game_controller.js')(app);
+
 
 var port = 3000;
 //confirms active server in node
