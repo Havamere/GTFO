@@ -30,11 +30,7 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 //gets and uses game specific orms
-<<<<<<< HEAD
 require('./controllers/game_controller.js')(app);
-=======
-require('./controllers/gamedata.js');
->>>>>>> 01f7113110ec457a205c999663a6099c28603363
 
 
 var port = 3000;
