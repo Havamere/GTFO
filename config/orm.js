@@ -1,13 +1,23 @@
 var connection = require('../config/connection.js');
 
 var orm = {
-   
-    itemChoice: function(tableInput, colName, player_name, cb) {
+    selectAll: function(table) {
+        return new Promise(function(resolve, reject){
+            var queryString = 'SELECT * FROM '+ table +'';
+            connection.query(queryString, function(err, res){
+                if (err) throw err;
+                //console.log(res);
+                return resolve(res);
+            });
+        });
+    },
+
+    itemChoice: function(tableInput, colName, player_name) {
         return new Promise(function(resolve, reject){
             var s = 'UPDATE ' + tableInput + "SET "+ colName +"=true WHERE player_name = '" + player_name + "';";
             connection.query(s, function(err, result) {
                 if (err) throw err;
-                cb(result);
+                return resolve(result);
             });
         });
     },

@@ -44,7 +44,6 @@ var gameData = [
 
 module.exports = function(app){
 
-	if(gameData.length > 0){
 
 		app.get('/', function(req, res){
 			res.render('home', {			
@@ -77,6 +76,9 @@ module.exports = function(app){
 		}
 	});
 
+
+		if(gameData.length > 0){
+			
 		app.get('/game', function(req, res){
 			var randomIndex = Math.floor(Math.random()*gameData.length);
 			var chosen = gameData[randomIndex];
