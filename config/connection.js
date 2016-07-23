@@ -14,11 +14,14 @@ var connection = mysql.createConnection({
     database: 'gtfo_db'
 });
 
+function connect() {
 connection.connect(function(err) {
-    if (err) {
-        console.error('error connecting: ' + err.stack);
-        return;
-    }
-    console.log('connected as id ' + connection.threadId);
+   if (err) {
+       console.error('error connecting: ' + err.stack);
+       return;
+   }
+   console.log('connected as id ' + connection.threadId);
 });
+}
 
+module.exports.connect = connect

@@ -6,6 +6,9 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var routes = require('../routes.js');
 var gameData = require('gamedata.js')
+var UserModel = require('../models/User.js');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 var app = express();
 
 //Setting the strategy for Passport
@@ -34,6 +37,12 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
   done(null, user);
 });
+
+var gameData = [
+	{name: "Bedroom", roomClass: "bedroom", frameClass: "frameIMG", text: 'you see me', button1: items.winArray[1], button2: items.otherArray[1]},
+	{name: "Library", roomClass: "library", frameClass: "frameIMG", text: 'you see me', button1: items.winArray[2], button2: items.otherArray[2]},
+	{name: "Maid's Room", roomClass: "maidsRoom", frameClass: "frameIMG", text: 'you see me', button1: items.otherArray[0], button2: items.winArray[0]},
+];
 
 module.exports = function(app){
 
