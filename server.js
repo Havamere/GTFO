@@ -31,7 +31,7 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 //gets and uses game specific orms
-require('./controllers/gamedata.js')(app);
+require('./controllers/gamedata.js');
 
 //Routes-----------------------------------------------------------
 require('./routes/routes.js')(app);
