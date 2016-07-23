@@ -18,6 +18,7 @@ h1 {
 /*helps control form on home page*/
 .game {
     position: absolute;
+    right: 10%;
     left: 60%;
     top: 25%;
 }
