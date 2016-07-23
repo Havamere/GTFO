@@ -2,11 +2,18 @@ var connection = require('../config/connection.js');
 
 var mysql = require('mysql');
 
+// var connection = mysql.createConnection({
+//    host: 'localhost',
+//    user: 'root',
+//    password: 'root',
+//    database: 'gtfo_db'
+// });
+
 var connection = mysql.createConnection({
-   host: 'localhost',
-   user: 'root',
-   password: 'root',
-   database: 'gtfo_db'
+   host: 'nj5rh9gto1v5n05t.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+   user: 'i37gcpxps2jciflx',
+   password: 'nrpiez7144son8am',
+   database: 'f87cjx34egsmktlj'
 });
 
 connection.connect(function(err) {
