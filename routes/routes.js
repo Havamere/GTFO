@@ -1,7 +1,7 @@
 var UserModel = require('../models/User.js');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var orm = require('../config/orm.js');
+var orm = require('../db/orm.js');
 
 
 //Setting the strategy for Passport
