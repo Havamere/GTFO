@@ -33,9 +33,9 @@ module.exports = function(app){
 			gameData.splice(randomIndex, 1);
 		});
 	} else {
-		//final page to display results and scores
-		app.get('/end', function(req, res) {
-			res.render('end');
-		});
+		// //final page to display results and scores
+		// app.get('/end', function(req, res) {
+		// 	res.render('end');
+		// });
 	}
 }

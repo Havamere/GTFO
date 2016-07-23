@@ -36,11 +36,8 @@ module.exports = function(app){
 	//GETs
 
 	app.get('/', function(req, res){
-		res.render('index', {
-			welcomeText: "Sign In",
-			actionBtn: 'signin',
+		res.render('home', {
 			message: req.flash('error')[0],
-			otherAction: "Signup"
 		});
 	});
 
@@ -49,16 +46,32 @@ module.exports = function(app){
 	});
 
 	app.get('/signup', function(req, res){
-		res.render('index', {
-			welcomeText: "Sign Up",
-			actionBtn: 'postSignin',
-			otherAction: "Signin"
-		});
+		res.render('newPlayer');
 	});
+
+	app.get('/game', function(req, res) {
+		if(gameData.length > 0) {
+			var randomIndex = Math.floor(Math.random()*gameData.length);
+			var chosen = gameData[randomIndex];
+			console.log(chosen);
+			res.render('game', chosen);
+			gameData.splice(randomIndex, 1);
+		} else {
+			//final page to 
+			display results and scores
+			app.get('/end', function(req, res) {
+				res.render('end');
+			});
+		}
+	});
+
+	app.get('/end', function(req, res) {
+			res.render('end');
+		});	
 
 	app.get('/authenticated', function(req,res){
 		if (req.isAuthenticated()) {
-			res.render('authenticated', {
+			res.render('game', {
 				username: req.user.username
 			})
 		} else {
@@ -81,7 +94,7 @@ module.exports = function(app){
 		var user = new UserModel(req.body);
 		UserModel.saveUser(user, function(status){
 			if(!status) {
-				res.redirect('/signup')
+				res.redirect('/newPlayer')
 				return false
 			}
 			res.redirect('/');
