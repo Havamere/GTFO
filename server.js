@@ -26,9 +26,6 @@ app.set('view engine', 'handlebars');
 //gets and uses game specific orms
 require('./controllers/game_controller.js')(app);
 
-// Routes
-// require('./routes/html-routes.js')(app);
-
 var port = 3000;
 //confirms active server in node
 app.listen(port, function() {

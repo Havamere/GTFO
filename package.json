@@ -31,11 +31,7 @@
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.14.0",
-    "gulp": "^3.9.1",
-    "gulp-jshint": "^2.0.1",
-    "jshint": "^2.9.2",
     "method-override": "^2.3.6",
-    "mysql": "^2.11.1",
-    "novel.js": "^0.1.1"
+    "mysql": "^2.11.1"
   }
 }
