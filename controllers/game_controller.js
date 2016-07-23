@@ -19,9 +19,9 @@ var gameData = [
 
 //page render program
 module.exports = function(app){
-	// app.get('/end', function(req, res) {
-	// 		res.render('end');
-	// 	});
+	app.get('/end', function(req, res) {
+			res.render('end');
+		});
 
 	//logic to cover game beginning to end
 	if(gameData.length > 0) {
@@ -39,12 +39,12 @@ module.exports = function(app){
 		});
 		app.post('/choice', function(req, res) {
 			console.log(req.body);
-			orm.itemChoice('game_data', req.body.item, "Seymour Butz");
+			// orm.itemChoice('game_data', req.body.item, "Seymour Butz");
 		})
-	} else {
-		//final page to display results and scores
-		app.get('/end', function(req, res) {
-			res.render('end');
-		});
+	// } else {
+	// 	//final page to display results and scores
+	// 	// app.get('/end', function(req, res) {
+	// 	// 	res.render('end');
+	// 	});
 	}
 }

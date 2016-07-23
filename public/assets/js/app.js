@@ -1,11 +1,13 @@
 $(".btn").on('click', function() {
-	var item = $(this).val();
-
+	var item = $(this).attr("value");
+	console.log(item);
 	//grab current URL for post method
-	var currentURL = window.location.origin;
 
-	$.post(currentURL+'/choice', item, function(data){
+	$.post('/choice', item, function(data){
 		console.log(data);
 	})
 	//alert("HELLOOOOOOO!!!!!");
 })
+
+
+
