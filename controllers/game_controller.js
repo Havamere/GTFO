@@ -20,7 +20,7 @@ var gameData = [
 //page render program
 module.exports = function(app){
 	app.get('/end', function(req, res) {
-		orm.selectAll(gameData).then(function(){})
+		orm.selectAll(gameData).then(function(data){})
 			res.render('end');
 		});
 
