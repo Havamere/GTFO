@@ -1,14 +1,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var orm = require('../config/orm.js');
+var orm = require(__dirname +'/../config/orm.js');
 var UserModel = require('../User.js');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var routes = require('../routes.js');
-var gameData = require('gamedata.js')
+var gameData = require('./gamedata.js')
 var UserModel = require('../models/User.js');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var story = require('../public/assets/js/story.js');
 var app = express();
 
 //Setting the strategy for Passport
@@ -38,10 +39,14 @@ passport.deserializeUser(function(user, done) {
   done(null, user);
 });
 
+var winArray = ["Scotch","Key","Phone"];
+
+var otherArray = ["Magnifier","Rope","Candlestick"];
+
 var gameData = [
-	{name: "Bedroom", roomClass: "bedroom", frameClass: "frameIMG", text: 'you see me', button1: items.winArray[1], button2: items.otherArray[1]},
-	{name: "Library", roomClass: "library", frameClass: "frameIMG", text: 'you see me', button1: items.winArray[2], button2: items.otherArray[2]},
-	{name: "Maid's Room", roomClass: "maidsRoom", frameClass: "frameIMG", text: 'you see me', button1: items.otherArray[0], button2: items.winArray[0]},
+	{name: "Bedroom", roomClass: "bedroom", frameClass: "frameIMG", text: story.masterBed, button1: winArray[1], button2: otherArray[1]},
+	{name: "Library", roomClass: "library", frameClass: "frameIMG", text: story.library, button1: winArray[2], button2: otherArray[2]},
+	{name: "Maid's Room", roomClass: "maidsRoom", frameClass: "frameIMG", text: story.maidBed, button1: otherArray[0], button2: winArray[0]},
 ];
 
 module.exports = function(app){
@@ -54,10 +59,6 @@ module.exports = function(app){
 				message: req.flash('error')[0],
 				otherAction: "Signup"
 			});
-		});
-
-		app.get('/signin', function(req, res){
-			res.redirect('/')
 		});
 
 		app.get('/signup', function(req, res){
@@ -110,7 +111,7 @@ module.exports = function(app){
 		app.get('/end', function(req, res) {
 			orm.selectAllOrdered('game_data').then(function(data){
 				//console.log (data);
-				res.render('end', {scores: data});				
+				res.render('end', {scores: data, stories: story});				
 			})
 		});
 

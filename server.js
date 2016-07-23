@@ -30,7 +30,7 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 //gets and uses game specific orms
-require('./controllers/game_controller.js')(app);
+require('./controllers/new_controller.js')(app);
 
 
 var port = process.env.PORT || 3000;
