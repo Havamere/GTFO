@@ -1,16 +1,21 @@
 var connection = require('../config/connection.js');
 
 var orm = {
-    selectAllOrdered: function(table) {
-        return new Promise(function(resolve, reject){
-            var queryString = 'SELECT * FROM '+ table +' ORDER BY Score DESC';
-            connection.query(queryString, function(err, res){
-                if (err) throw err;
-                //console.log(res);
-                return resolve(res);
+        
+
+    addUserToDB: function (userObj, callback){
+            connection.query('INSERT INTO tblUsers SET ?', userObj, function(err, results){
+                if (err) return callback(false, err)
+                callback(true. null)
             });
-        });
-    },
+        },
+
+
+    findUser: function (username, callback){
+       connection.query('SELECT * FROM tblUsers WHERE ?', {username: username}, function(err, user){
+          callback(err, user)
+    })
+},
 
     itemChoice: function(tableInput, colName, player_name) {
         return new Promise(function(resolve, reject){
@@ -22,13 +27,6 @@ var orm = {
         });
     },
    
-    addPlayer: function(tableInput, player_name, password, cb) {
-        var s = "INSERT INTO " + tableInput + " (player_name, password) VALUES ('" +player_name+ "',false);";
-        connection.query(s, function(err, result) {
-            if (err) throw err;
-            cb(result);
-        });
-    },
     // Will check database if player name exists
     checkSavedPlayer: function(tableInput, coltoSearch, nameInput, passwordInput) {
         var queryString = 'SELECT * FROM ' + tableInput + ' WHERE ' + coltoSearch + ' = ?';
@@ -75,22 +73,3 @@ var orm = {
 };
 
 module.exports = orm;
-
-
-
-
-function addUserToDB(userObj, callback){
-    connection.query('INSERT INTO tblUsers SET ?', userObj, function(err, results){
-        if (err) return callback(false, err)
-        callback(true. null)
-    });
-}
-
-module.exports.addUserToDB = addUserToDB;
-
-function findUser(username, callback){
-    connection.query('SELECT * FROM tblUsers WHERE ?', {username: username}, function(err, user){
-        callback(err, user)
-    })
-}
-module.exports.findUser = findUser;
