@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "user choice driven content, escape from building",
   "main": "server.js",
+  "engines": {
+    "node": "4.4.6"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
