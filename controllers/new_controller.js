@@ -5,6 +5,7 @@ var items = require('../public/assets/js/app.js');
 var UserModel = require('../models/User.js');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var routes = require('../routes.js');
 var app = express();
 
 //Setting the strategy for Passport
