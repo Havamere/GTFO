@@ -1,9 +1,9 @@
 var connection = require('../config/connection.js');
 
 var orm = {
-    selectAll: function(table) {
+    selectAllOrdered: function(table) {
         return new Promise(function(resolve, reject){
-            var queryString = 'SELECT * FROM '+ table +'';
+            var queryString = 'SELECT * FROM '+ table +' ORDER BY Score DESC';
             connection.query(queryString, function(err, res){
                 if (err) throw err;
                 //console.log(res);

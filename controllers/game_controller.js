@@ -10,18 +10,27 @@ var otherArray = ["Magnifier","Rope","Candlestick"];
 
 //game play data 
 var gameData = [
-	{name: "Bedroom", roomClass: "bedroom", frameClass: "frameIMG", text: 'you see me', button1: winArray[1], button2: otherArray[1]},
-	{name: "Library", roomClass: "library", frameClass: "frameIMG", text: 'you see me', button1: winArray[2], button2: otherArray[2]},
-	{name: "Maid's Room", roomClass: "maidsRoom", frameClass: "frameIMG", text: 'you see me', button1: otherArray[0], button2: winArray[0]},
+	{name: "Bedroom", roomClass: "bedroom", frameClass: "frameIMG", text: 'you see me', button1: winArray[1], button2: otherArray[1], path: "/game"},
+	{name: "Library", roomClass: "library", frameClass: "frameIMG", text: 'you see me', button1: winArray[2], button2: otherArray[2], path: "/game"},
+	{name: "Maid's Room", roomClass: "maidsRoom", frameClass: "frameIMG", text: 'you see me', button1: otherArray[0], button2: winArray[0], path: "/game"},
 ];
 
 
 
 //page render program
 module.exports = function(app){
-	app.get('/end', function(req, res) {
-		orm.selectAll(gameData).then(function(data){})
-			res.render('end');
+	
+	if (gameData.length == 1) {
+		for (var i=0; i++; i<gameData.length) {
+			gameData[i].path = '/end';
+		}
+	}
+
+		app.get('/end', function(req, res) {
+			orm.selectAllOrdered('game_data').then(function(data){
+				//console.log (data);
+				res.render('end', {scores: data});				
+			})
 		});
 
 	//logic to cover game beginning to end
