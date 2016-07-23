@@ -36,11 +36,8 @@ module.exports = function(app){
 	//GETs
 
 	app.get('/', function(req, res){
-		res.render('index', {
-			welcomeText: "Sign In",
-			actionBtn: 'signin',
+		res.render('home', {
 			message: req.flash('error')[0],
-			otherAction: "Signup"
 		});
 	});
 
@@ -49,16 +46,32 @@ module.exports = function(app){
 	});
 
 	app.get('/signup', function(req, res){
-		res.render('index', {
-			welcomeText: "Sign Up",
-			actionBtn: 'signup',
-			otherAction: "Signin"
-		});
+		res.render('newPlayer');
 	});
+
+	app.get('/game', function(req, res) {
+			var randomIndex = Math.floor(Math.random()*gameData.length);
+			var chosen = gameData[randomIndex];
+			console.log(chosen);
+			console.log(gameData.length);
+			if (gameData.length == 0) {
+				res.redirect('/end');
+			} else {
+				res.render('game', chosen);
+			}
+			gameData.splice(randomIndex, 1);
+		});
+
+	app.get('/end', function(req, res) {
+			orm.selectAllOrdered('game_data').then(function(data){
+				//console.log (data);
+				res.render('end', {scores: data});				
+			})
+		});
 
 	app.get('/authenticated', function(req,res){
 		if (req.isAuthenticated()) {
-			res.render('authenticated', {
+			res.render('game', {
 				username: req.user.username
 			})
 		} else {
@@ -81,10 +94,16 @@ module.exports = function(app){
 		var user = new UserModel(req.body);
 		UserModel.saveUser(user, function(status){
 			if(!status) {
-				res.redirect('/signup')
+				res.redirect('/newPlayer')
 				return false
 			}
 			res.redirect('/');
+		});
+
+		//route to post to mysql
+		app.post('/choice', function(req, res) {
+			console.log(req.body);
+			//orm.itemChoice('game_data', 'Scotch', "Seymour Butz").then(function(data){});
 		});
 	});
 

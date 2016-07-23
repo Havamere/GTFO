@@ -6,19 +6,20 @@
     <div class="game">
         <div class="panel panel-default">
             <div class="panel-heading">Good Day Sir!</div>
-            <div class="panel-body">
-                Placeholder text goes here, old chap!
-            </div>
+                <div class="panel-body">
+                    Placeholder text goes here, old chap!
+                </div>
         </div>
-
+        <form method="POST" action="/signin">
+            <div class="form-group">
+                 <label class="control-label" for="focusedInput">Good sir, could you honor me with your name?</label>
+                    <input class="form-control" id="playerName" type="text" placeholder="Sir Hedgeworth Pennypincher">
+                    </div>
         <div class="form-group">
-            <label class="control-label" for="focusedInput">Good sir, could you honor me with your name?</label>
-            <input class="form-control" id="playerName" type="text" placeholder="Sir Hedgeworth Pennypincher">
+                <label class="control-label" for="focusedInput">Could you kindly provide me with a password?</label>
+                    <input class="form-control" id="playerPass" type="text" placeholder="Password">
         </div>
-        <div class="form-group">
-            <label class="control-label" for="focusedInput">Could you kindly provide me with a password?</label>
-            <input class="form-control" id="playerPass" type="text" placeholder="1234">
-        </div>
-        <a role="button" class="btn btn-default btn-lg btn-block" href="/game">Jolly Good Show Old Chap, Tally Ho!</a>
+            <button class="btn btn-default btn-lg btn-block">Jolly Good Show Old Chap, Tally Ho!</button>
+        </form>
     </div>
 </div>
