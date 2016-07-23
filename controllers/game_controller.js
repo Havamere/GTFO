@@ -7,6 +7,7 @@ var app = express();
 var winArray = ["Scotch","Key","Phone"];
 
 var otherArray = ["Magnifier","Rope","Candlestick"];
+
 //game play data 
 var gameData = [
 	{name: "Bedroom", roomClass: "bedroom", frameClass: "frameIMG", text: 'you see me', button1: winArray[1], button2: otherArray[1]},
@@ -18,9 +19,10 @@ var gameData = [
 
 //page render program
 module.exports = function(app){
-	app.get('/end', function(req, res) {
-			res.render('end');
-		});
+	// app.get('/end', function(req, res) {
+	// 		res.render('end');
+	// 	});
+
 	//logic to cover game beginning to end
 	if(gameData.length > 0) {
 		//home page / sign-in form 
@@ -35,6 +37,10 @@ module.exports = function(app){
 			res.render('game', chosen);
 			gameData.splice(randomIndex, 1);
 		});
+		app.post('/choice', function(req, res) {
+			console.log(req.body);
+			orm.itemChoice('game_data', req.body.item, "Seymour Butz");
+		})
 	} else {
 		//final page to display results and scores
 		app.get('/end', function(req, res) {
