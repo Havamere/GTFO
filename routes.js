@@ -50,24 +50,24 @@ module.exports = function(app){
 	});
 
 	app.get('/game', function(req, res) {
-		if(gameData.length > 0) {
 			var randomIndex = Math.floor(Math.random()*gameData.length);
 			var chosen = gameData[randomIndex];
 			console.log(chosen);
-			res.render('game', chosen);
+			console.log(gameData.length);
+			if (gameData.length == 0) {
+				res.redirect('/end');
+			} else {
+				res.render('game', chosen);
+			}
 			gameData.splice(randomIndex, 1);
-		} else {
-			//final page to 
-			display results and scores
-			app.get('/end', function(req, res) {
-				res.render('end');
-			});
-		}
-	});
+		});
 
 	app.get('/end', function(req, res) {
-			res.render('end');
-		});	
+			orm.selectAllOrdered('game_data').then(function(data){
+				//console.log (data);
+				res.render('end', {scores: data});				
+			})
+		});
 
 	app.get('/authenticated', function(req,res){
 		if (req.isAuthenticated()) {
@@ -98,6 +98,12 @@ module.exports = function(app){
 				return false
 			}
 			res.redirect('/');
+		});
+
+		//route to post to mysql
+		app.post('/choice', function(req, res) {
+			console.log(req.body);
+			//orm.itemChoice('game_data', 'Scotch', "Seymour Butz").then(function(data){});
 		});
 	});
 
