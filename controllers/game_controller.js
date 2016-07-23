@@ -25,10 +25,11 @@ module.exports = function(app){
 	//logic to cover game beginning to end
 		//home page / sign-in form 
 		app.get('/', function(req, res) {
-			if (gameData.length == 0) {
-				res.redirect('/end');
-			};
-			res.render('home');
+		res.send("teset")	
+			// if (gameData.length == 0) {
+			// 	res.redirect('/end');
+			// };
+			// res.render('home');
 		});
 		//game pages with random starting position
 		app.get('/game', function(req, res) {
