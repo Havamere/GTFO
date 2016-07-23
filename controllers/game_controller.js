@@ -19,12 +19,13 @@ var gameData = [
 
 //page render program
 module.exports = function(app){
-	// app.get('/end', function(req, res) {
-	// 		res.render('end');
-	// 	});
+	app.get('/end', function(req, res) {
+		orm.selectAll(gameData).then(function(){})
+			res.render('end');
+		});
 
 	//logic to cover game beginning to end
-	if(gameData.length > 0) {
+	// if(gameData.length > 0) {
 		//home page / sign-in form 
 		app.get('/', function(req, res) {
 			res.render('home');
@@ -34,17 +35,20 @@ module.exports = function(app){
 			var randomIndex = Math.floor(Math.random()*gameData.length);
 			var chosen = gameData[randomIndex];
 			console.log(chosen);
+			console.log(gameData.length);
 			res.render('game', chosen);
 			gameData.splice(randomIndex, 1);
 		});
 		app.post('/choice', function(req, res) {
 			console.log(req.body);
-			orm.itemChoice('game_data', req.body.item, "Seymour Butz");
-		})
-	} else {
-		//final page to display results and scores
-		app.get('/end', function(req, res) {
-			res.render('end');
+			//orm.itemChoice('game_data', 'Scotch', "Seymour Butz").then(function(data){});
 		});
-	}
+	// } else if (gameData.length == 0) {
+
+		if (gameData.length == 0 ) {
+			//final page to display results and scores
+			app.get('/?', function(req, res) {	
+				res.render('end');
+			});
+		}
 }
