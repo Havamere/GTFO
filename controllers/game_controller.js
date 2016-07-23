@@ -1,7 +1,7 @@
 //requires files to process requests to server
 var express = require('express');
 var bodyParser = require('body-parser');
-var orm = require('../config/orm.js');
+var orm = require('../db/orm.js');
 var story = require('../public/assets/js/story.js')
 var app = express();
 

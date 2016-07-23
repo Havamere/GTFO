@@ -18,7 +18,16 @@ connection.connect(function(err) {
 });
 
 var orm = {
-        
+         selectAllOrdered: function(table) {
+          return new Promise(function(resolve, reject){
+              var queryString = 'SELECT * FROM '+ table +' ORDER BY Score DESC';
+              connection.query(queryString, function(err, res){
+                  if (err) throw err;
+                  //console.log(res);
+                 return resolve(res);
+             });
+         });
+     },
 
     addUserToDB: function (userObj, callback){
             connection.query('INSERT INTO tblUsers SET ?', userObj, function(err, results){
