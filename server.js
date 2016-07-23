@@ -20,7 +20,7 @@ app.use(flash());
 
 //passport middleware methods
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session());	
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
